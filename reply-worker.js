@@ -111,12 +111,13 @@ function ReplyWorker(opts) {
   this.idFormat = opts.idFormat || "[\\w-]+";
   this.mailAddress = opts.mailAddress;
   this.stripMessages = "stripMessages" in opts ? opts.stripMessages : true;
+  this.checkInterval = "checkInterval" in opts ? opts.checkInterval : 10;
   this.imap = new Imap({
     user: opts.mailAddress,
     password: opts.mailPassword,
     host: opts.imapConnection.host,
     port: opts.imapConnection.port || 993,
-    tls: "tls" in opts.imapConnection ? opts.imapConnection.tls : true;
+    tls: "tls" in opts.imapConnection ? opts.imapConnection.tls : true
   });
 
 }
@@ -127,7 +128,7 @@ ReplyWorker.prototype.start = function() {
   var self = this;
 
   this.on('fetchend', function () {
-    setTimeout(readInbox.bind(self), 10 * 60 * 1000);
+    setTimeout(readInbox.bind(self), self.checkInterval * 60 * 1000);
   });
 
   this.imap.once('ready', function() {
