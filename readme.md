@@ -11,9 +11,9 @@ var ReplyWorker = require('node-reply-worker');
 var inspect     = require('util').inspect;
 
 var worker = new ReplyWorker({
-  mailAddress: /* You email address */,
-  mailPassword: /* your email password */,
-  stripMessages: /* removes replied message and signatures */,
+  mailAddress: /* Your email address */,
+  mailPassword: /* Your email password */,
+  stripMessages: /* Removes replied messages and signatures */,
   imapConnection: {
     host: /* Server address */,
     port: /* Server port, default: 993 */,
