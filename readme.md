@@ -14,7 +14,7 @@ var worker = new ReplyWorker({
   mailAddress: /* Your email address */,
   mailPassword: /* Your email password */,
   stripMessages: /* Removes replied messages and signatures */,
-  checknterval: /* Interval in minutes to check for new messages, default: 10 */,
+  checkInterval: /* Interval in minutes to check for new messages, default: 10 */,
   imapConnection: {
     host: /* Server address */,
     port: /* Server port, default: 993 */,
