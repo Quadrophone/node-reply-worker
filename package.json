@@ -1,6 +1,6 @@
 {
   "name": "node-reply-worker",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "description": "An email reply worker that listens to new emails and emits an event every time an email with an id arrives.",
   "repository": {
     "type": "git",
@@ -8,6 +8,7 @@
   },
   "keywords": [
     "email",
+    "mail",
     "reply",
     "worker"
   ],

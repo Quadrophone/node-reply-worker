@@ -4,6 +4,12 @@ An email reply worker that listens to new emails and emits an event every time a
 
 This works with plus addressing, for example, if you have the email address `jonh@example.com`, you can add `+<something>` before the @ sign, like `jonh+123@example.com`. Most mail servers support this feature, but if you are not sure, you can check by sending and email as described.
 
+## Install
+
+```
+npm install node-reply-worker --save
+```
+
 ## Usage
 
 ```javascript
