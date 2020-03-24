@@ -116,9 +116,11 @@ function ReplyWorker(opts) {
     user: opts.mailAddress,
     password: opts.mailPassword,
     host: opts.imapConnection.host,
-    servername: opts.imapConnection.servername || opts.imapConnection.host,
     port: opts.imapConnection.port || 993,
-    tls: "tls" in opts.imapConnection ? opts.imapConnection.tls : true
+    tls: "tls" in opts.imapConnection ? opts.imapConnection.tls : true,
+    tlsOptions: {
+      servername: opts.imapConnection.servername || opts.imapConnection.host,
+    }
   });
 
 }
